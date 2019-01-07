@@ -59,6 +59,12 @@ public:
 };
 
 int main(){
+	Solution s;
+	int a = 0;
+	int b = 0;
+	vector<int> array = { 1, 1, 2, 3, 3, 4, 4, 5, 6, 6, 7, 7, 7, 7, 8, 8 };
+	s.FindNumsAppearOnce(array, &a, &b);
+	cout << a << " " << endl;
 	system("pause");
 	return 0;
 }
