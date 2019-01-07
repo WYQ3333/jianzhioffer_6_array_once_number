@@ -42,14 +42,14 @@ public:
 			}
 			else if (flag == 0 && data[i] != data[j]){
 				int c = data[i];
-				num1 = (int *)c;
+				num1 = &c;
 				flag = 1;
 				i += 1;
 				j += 1;
 			}
 			else if (flag == 1 && data[i] != data[j]){
 				int c = data[i];
-				num2 = (int *)c;
+				num2 = &c;
 				flag = 2;
 				i += 1;
 				j += 1;
