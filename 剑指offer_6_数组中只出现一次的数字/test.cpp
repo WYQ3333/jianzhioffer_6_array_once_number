@@ -40,14 +40,14 @@ public:
 				i += 2;
 				j += 2;
 			}
-			if (flag == 0 && data[i] != data[j]){
+			else if (flag == 0 && data[i] != data[j]){
 				int c = data[i];
 				num1 = (int *)c;
 				flag = 1;
 				i += 1;
 				j += 1;
 			}
-			if (flag == 1 && data[i] != data[j]){
+			else if (flag == 1 && data[i] != data[j]){
 				int c = data[i];
 				num2 = (int *)c;
 				flag = 2;
