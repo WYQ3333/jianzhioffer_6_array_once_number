@@ -42,14 +42,14 @@ public:
 			}
 			else if (flag == 0 && data[i] != data[j]){
 				int c = data[i];
-				num1 = &c;
+				*num1 = c;
 				flag = 1;
 				i += 1;
 				j += 1;
 			}
 			else if (flag == 1 && data[i] != data[j]){
 				int c = data[i];
-				num2 = &c;
+				*num2 = c;
 				flag = 2;
 				i += 1;
 				j += 1;
@@ -65,6 +65,7 @@ int main(){
 	vector<int> array = { 1, 1, 2, 3, 3, 4, 4, 5, 6, 6, 7, 7, 7, 7, 8, 8 };
 	s.FindNumsAppearOnce(array, &a, &b);
 	cout << a << " " << endl;
+	cout << b << " " << endl;
 	system("pause");
 	return 0;
 }
