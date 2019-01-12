@@ -62,7 +62,7 @@ int main(){
 	Solution s;
 	int a = 0;
 	int b = 0;
-	vector<int> array = { 1, 1, 2, 3, 3, 4, 4, 5, 6, 6, 7, 7, 7, 7, 8, 8 };
+	vector<int> array = { 2, 4, 3, 6, 3, 2, 5, 5 };
 	s.FindNumsAppearOnce(array, &a, &b);
 	cout << a << " " << endl;
 	cout << b << " " << endl;
