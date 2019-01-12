@@ -41,6 +41,10 @@ public:
 				if (j < data.size() - 2){
 					j += 2;
 				}
+				else{
+					int c = data[i];
+					*num2 = c;
+				}
 			}
 			else if (flag == 0 && data[i] != data[j]){
 				int c = data[i];
