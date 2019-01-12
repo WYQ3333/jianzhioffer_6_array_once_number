@@ -16,30 +16,38 @@ public:
 		int cur = 1;
 		int flag = 0;
 		while (cur < data.size()){
-			if (data[pre] == data[cur]&&cur!=data.size()-2){
+			if (cur+2<data.size()&&data[pre] == data[cur]){
 				pre += 2;
 				cur += 2;
 			}
-			else if (data[pre] != data[cur] && cur != data.size() - 2){
+			else if (cur + 2 <data.size() && data[pre] != data[cur]){
 				if (flag == 0){
 					flag = 1;
 					*num1 = data[pre];
-					pre += 1;
-					cur += 1;
 				}
 				else if (flag == 1){
 					*num2 = data[pre];
-					pre += 1;
-					cur += 1;
+					break;
 				}
-				else{
+				pre += 1;
+				cur += 1;
+			}
+			else if (cur + 2 == data.size()){
+				if (flag == 0){
+					pre += 2;
+					cur += 2;
+					*num1 = data[pre];
+					*num2 = data[cur];
+					break;
+				}
+				else if (flag == 1){
 					pre += 1;
 					*num2 = data[pre];
+					break;
 				}
 			}
 		}
 	}
-
 };
 
 int main(){
