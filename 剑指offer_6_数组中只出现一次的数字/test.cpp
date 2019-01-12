@@ -38,7 +38,9 @@ public:
 		while (j < data.size()){
 			if (data[i] == data[j]){
 				i += 2;
-				j += 2;
+				if (j < data.size() - 2){
+					j += 2;
+				}
 			}
 			else if (flag == 0 && data[i] != data[j]){
 				int c = data[i];
