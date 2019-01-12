@@ -12,32 +12,34 @@ public:
 	void FindNumsAppearOnce(vector<int> data, int* num1, int *num2) {
 		sort(data.begin(), data.end());//对数组进行排序
 		//从有序数组中找到只出现一次的数字
-		int i = 0;
-		int j = 1;
+		int pre = 0;
+		int cur = 1;
 		int flag = 0;
-		while (j < data.size()){
-			if (j+2<data.size()&&data[i] == data[j]){
-				i += 2;
-				j += 2;
+		while (cur < data.size()){
+			if (data[pre] == data[cur]&&cur!=data.size()-2){
+				pre += 2;
+				cur += 2;
 			}
-			else if (flag==0&&j + 1 < data.size() && data[i] != data[j]){
-				*num1 = data[i];
-				flag = 1;
-				i += 1;
-				j += 1;
-			}
-			else if (flag == 1 && j + 1 < data.size() && data[i] != data[j]){
-				*num2 = data[i];
-				flag = 2;
-				i += 1;
-				j += 1;
-			}
-			else if (flag==1&&j + 1 == data.size() && i + 1 == data.size() - 1){
-				*num2 = data[i];
+			else if (data[pre] != data[cur] && cur != data.size() - 2){
+				if (flag == 0){
+					flag = 1;
+					*num1 = data[pre];
+					pre += 1;
+					cur += 1;
+				}
+				else if (flag == 1){
+					*num2 = data[pre];
+					pre += 1;
+					cur += 1;
+				}
+				else{
+					pre += 1;
+					*num2 = data[pre];
+				}
 			}
 		}
-
 	}
+
 };
 
 int main(){
