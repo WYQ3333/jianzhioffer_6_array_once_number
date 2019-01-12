@@ -41,6 +41,20 @@ public:
 					break;
 				}
 				else if (flag == 1){
+					pre += 2;
+					*num2 = data[pre];
+					break;
+				}
+			}
+			else if (cur + 1 == data.size()){
+				if (flag == 0){
+					pre += 1;
+					cur += 1;
+					*num1 = data[pre];
+					*num2 = data[cur];
+					break;
+				}
+				else if (flag == 1){
 					pre += 1;
 					*num2 = data[pre];
 					break;
@@ -54,7 +68,7 @@ int main(){
 	Solution s;
 	int a = 0;
 	int b = 0;
-	vector<int> array = { 2, 4, 3, 6, 3, 2, 5, 5 };
+	vector<int> array = { 2, 4, 3, 6, 3, 2};
 	s.FindNumsAppearOnce(array, &a, &b);
 	cout << a << " " << endl;
 	cout << b << " " << endl;
